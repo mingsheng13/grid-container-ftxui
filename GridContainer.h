@@ -7,6 +7,7 @@
 namespace ftxui
 {
     Component GridContainer(const std::vector<Components>& lines);
+    Component GridContainer(const std::vector<Components>& lines, int* x, int* y);
 }
 
 #endif //GRIDCONTAINER_GRIDCONTAINER_H

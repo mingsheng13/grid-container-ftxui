@@ -7,7 +7,7 @@
 using namespace ftxui;
 
 int main() {
-    auto screen = ScreenInteractive::FitComponent();
+    auto screen = ScreenInteractive::TerminalOutput();
     std::string output;
 
     auto style = size(WIDTH, EQUAL, 5);
@@ -52,7 +52,7 @@ int main() {
                 text(output) | border,
                 grid->Render() | center | flex
             })
-        }) | size(WIDTH, EQUAL, 30);
+        }) | size(WIDTH, EQUAL, 30) | center;
     });
 
     screen.Loop(renderer);
