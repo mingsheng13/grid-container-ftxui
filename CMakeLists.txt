@@ -1,35 +1,15 @@
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.14)
+project(ftxui-grid-container)
+include(cmake/ftxui.cmake)
 
-project(GridContainer)
+add_library(ftxui-grid-container STATIC
+    include/ftxui-grid-container/grid-container.hpp
+    src/ftxui-grid-container/grid-container.cpp
+    )
+target_link_libraries(ftxui-grid-container PUBLIC ftxui::component)
 
-# --- Fetch FTXUI --------------------------------------------------------------
-include(FetchContent)
-
-set(FETCHCONTENT_UPDATES_DISCONNECTED TRUE)
-FetchContent_Declare(ftxui
-        GIT_REPOSITORY https://github.com/ArthurSonzogni/ftxui
-        GIT_TAG v5.0.0
-)
-
-FetchContent_GetProperties(ftxui)
-if(NOT ftxui_POPULATED)
-    FetchContent_Populate(ftxui)
-    add_subdirectory(${ftxui_SOURCE_DIR} ${ftxui_BINARY_DIR} EXCLUDE_FROM_ALL)
-endif()
-
-# ------------------------------------------------------------------------------
-
-set(CMAKE_CXX_STANDARD 17)
-
-add_executable(${PROJECT_NAME} main.cpp
-        GridContainer.cpp
-        GridContainer.h)
-
-
-target_link_libraries(${PROJECT_NAME}
-        PRIVATE ftxui::screen
-        PRIVATE ftxui::dom
-        PRIVATE ftxui::component
-)
-
-target_include_directories(${PROJECT_NAME} PRIVATE src)
+target_include_directories(ftxui-grid-container PUBLIC 
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+    )
+add_subdirectory(example)
