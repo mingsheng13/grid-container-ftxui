@@ -56,7 +56,7 @@ FetchContent_Declare(ftxui
 
 FetchContent_Declare(ftxui-grid-input
   GIT_REPOSITORY https://github.com/mingsheng13/grid-container-ftxui
-  GIT_TAG main
+  GIT_TAG master
 )
 
 FetchContent_MakeAvailable(ftxui)
