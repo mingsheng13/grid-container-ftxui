@@ -63,6 +63,6 @@ FetchContent_MakeAvailable(ftxui)
 FetchContent_MakeAvailable(ftxui-grid-input)
 add_executable(my-app src/main.cpp)
 target_link_libraries(my-app
-  PRIVATE ftxui-grid-input
+  PRIVATE ftxui-grid-container
 )
 ```
