@@ -54,15 +54,15 @@ FetchContent_Declare(ftxui
   GIT_TAG v5.0.0
 )
 
-FetchContent_Declare(ftxui-grid-input
+FetchContent_Declare(ftxui-grid-container
   GIT_REPOSITORY https://github.com/mingsheng13/grid-container-ftxui
   GIT_TAG master
 )
 
 FetchContent_MakeAvailable(ftxui)
-FetchContent_MakeAvailable(ftxui-grid-input)
+FetchContent_MakeAvailable(ftxui-grid-container)
 add_executable(my-app src/main.cpp)
 target_link_libraries(my-app
-  PRIVATE ftxui-grid-input
+  PRIVATE ftxui-grid-container
 )
 ```
