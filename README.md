@@ -34,7 +34,7 @@ int main() {
 
   auto grid = GridContainer({
     { button0, button1 },
-    { button1, button2 },
+    { button2, button3 },
   })
 
   auto screen = ScreenInteractive::TerminalOutput();
