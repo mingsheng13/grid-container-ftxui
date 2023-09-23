@@ -27,7 +27,7 @@ See [./example](./example).
 #include "ftxui/component/component.hpp"
 #include "ftxui/component/screen_interactive.hpp"
 #include "ftxui/dom/elements.hpp"
-#include "ftxui-grid-container/grid-container.h"
+#include "ftxui-grid-container/grid-container.hpp"
 
 using namespace ftxui;
 
